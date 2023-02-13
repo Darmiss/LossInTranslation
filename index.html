@@ -78,12 +78,12 @@ function toggleMarkers(map, markers) {
           disableDefaultUI: true
         });
       }
+      
 function updateLegend(category) {
   let legend = document.getElementById('legend');
   legend.innerHTML = '';
 
-  switch (category) {
-      `;
+   switch (category) {
     case '1400s':
       legend.innerHTML = `
         <h3 style="margin-top: 0;">Legend for 1400s</h3>
@@ -95,11 +95,11 @@ function updateLegend(category) {
           <div style="width: 10px; height: 10px; background: #00FF00; margin-right: 10px;"></div>
           <p style="margin: 0;">Book Title 2</p>
         </div>
-      break;
       `;
+      break;
     case 'subset':
       legend.innerHTML = `
-        <h3 style="margin-top: 0;">Legend for 1400s</h3>
+        <h3 style="margin-top: 0;">Legend for Subset</h3>
         <div style="display: flex; align-items: center;">
           <div style="width: 10px; height: 10px; background: #0000FF; margin-right: 10px;"></div>
           <p style="margin: 0;">Book Title 3</p>
@@ -108,11 +108,12 @@ function updateLegend(category) {
           <div style="width: 10px; height: 10px; background: #FFFF00; margin-right: 10px;"></div>
           <p style="margin: 0;">Book Title 4</p>
         </div>
-        ;`
-      default:
+      `;
       break;
-      }
-      }
+    default:
+      break;
+  }
+}
       
      
     </script>

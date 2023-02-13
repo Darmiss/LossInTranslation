@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Simple Website</title>
+    <title>My Google Maps Website</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR77YDbHKGLauCjtn1h5amoKCofnKGA6Y"></script>
+    <script>
+      var map1, map2;
+      var markers1 = [], markers2 = [];
+
+      function initMap() {
+        map1 = new google.maps.Map(document.getElementById("map1"), {
+          center: {lat: 39.8283, lng: -98.5795},
+          zoom: 3
+        });
+        map2 = new google.maps.Map(document.getElementById("map2"), {
+          center: {lat: 46.2276, lng: 2.2137},
+          zoom: 3
+        });
+
+        google.maps.event.addListener(map1, 'click', function(event) {
+          placeMarker(event.latLng, map1, markers1);
+        });
+        google.maps.event.addListener(map2, 'click', function(event) {
+          placeMarker(event.latLng, map2, markers2);
+        });
+      }
+
+      function placeMarker(location, map, markers) {
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+        markers.push(marker);
+      }
+
+      function toggleMarkers(map, markers) {
+        for (var i = 0; i < markers.length; i++) {
+          if (markers[i].getMap() === null) {
+            markers[i].setMap(map);
+          } else {
+            markers[i].setMap(null);
+          }
+        }
+      }
+    </script>
   </head>
-  <body>
-    <h1>Hello World!</h1>
-    <p>This is my simple website hosted on GitHub Pages.</p>
+  <body onload="initMap()">
+    <h1>My Google Maps Website</h1>
+    <div id="map1" style="width: 500px; height: 400px; float: left;"></div>
+    <div id="map2" style="width: 500px; height: 400px; float: right;"></div>
+    <br style="clear: both;" />
+    <button onclick="toggleMarkers(map1, markers1)">Toggle Map 1 Markers</button>
+    <button onclick="toggleMarkers(map2, markers2)">Toggle Map 2 Markers</button>
   </body>
 </html>

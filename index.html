@@ -47,15 +47,20 @@
         }
       }
     </script>
-  </head>
-  <body onload="initMap()">
-    <h1>Discovery of the New World(1492)</h1>
-    <div id="map1" style="width: 500px; height: 400px; float: left;"></div>
-    <div id="map2" style="width: 500px; height: 400px; float: right;"></div>
-    <br style="clear: both;" />
-    <button onclick="toggleMarkers(map1, markers1)">Popular Novels 1400s</button>
-    <button onclick="toggleMarkers(map2, markers2)">Small Subset</button>
-     <button onclick="toggleMarkers(map2, markers2)">Popular Novels 1500s</button>
-     <button onclick="toggleMarkers(map2, markers2)">Popular Novels 1600s</button>
+<body onload="initMap()">
+    <h1 style="text-align: center;">Discovery of the New World(1492)</h1>
+    <div id="map1" style="width: 500px; height: 400px; margin: 0 auto;"></div>
+    <br />
+    <div id="map2" style="width: 500px; height: 400px; margin: 0 auto;"></div>
+    <br />
+    <div style="text-align: center;">
+      <button onclick="toggleMarkers(map1, markers1)">Popular Novels 1400s</button>
+      <button onclick="toggleMarkers(map2, markers2)">Small Subset</button>
+      <button onclick="toggleMarkers(map2, markers2)">Popular Novels 1500s</button>
+      <button onclick="toggleMarkers(map2, markers2)">Popular Novels 1600s</button>
+    </div>
   </body>
 </html>
+
+
+

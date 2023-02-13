@@ -63,29 +63,11 @@ function toggleMarkers(map, markers) {
 }
       var markers1 = [], markers2 = [];
 
-      
-      var locations = [  {    title: 'Location 1 for The Great Gatsby',    lat: 37.7749,    lng: -122.4194  },  {    title: 'Location 2 for The Great Gatsby',    lat: 37.7902,    lng: -122.4015  }];
-for (var i = 0; i < locations.length; i++) {
-  var marker = new google.maps.Marker({
-    position: { lat: locations[i].lat, lng: locations[i].lng },
-    map: map,
-    title: locations[i].title
-  });
 
-  var infoWindow = new google.maps.InfoWindow({
-    content: locations[i].title
-  });
-
-  marker.addListener('click', function() {
-    infoWindow.open(map, marker);
-  });
-
-  markers.push(marker);
-}
       function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
           center: {lat: 36.75917583872293, lng: -7.990133970328247},
-          zoom: 2.5,
+          zoom: 2.1,
           draggable: false,
           disableDefaultUI: true
         });
@@ -103,6 +85,17 @@ for (var i = 0; i < locations.length; i++) {
     <h1 style="text-align: center;">Discovery of the New World(1492)</h1>
     <div id="map" style="width: 500px; height: 400px; margin: 0 auto;"></div>
     <br />
+  <div id="legend" style="position: absolute; top: 10px; left: 10px; background: white; padding: 10px;">
+  <h3 style="margin-top: 0;">Legend</h3>
+  <div style="display: flex; align-items: center;">
+    <div style="width: 10px; height: 10px; background: #FF0000; margin-right: 10px;"></div>
+    <p style="margin: 0;">Book Title Here</p>
+  </div>
+  <div style="display: flex; align-items: center;">
+    <div style="width: 10px; height: 10px; background: #00FF00; margin-right: 10px;"></div>
+    <p style="margin: 0;">Another Book Title</p>
+  </div>
+</div>
    <div style="text-align: center;">
       <button onclick="toggleMarkers(map, markers1400s)">Popular Novels 1400s</button>
       <button onclick="toggleMarkers(map, subsetMarkers)">Small Subset</button>

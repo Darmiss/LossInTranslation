@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Google Maps Website</title>
+    <title>Discovery of the New World</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR77YDbHKGLauCjtn1h5amoKCofnKGA6Y"></script>
     <script>
       var map1, map2;
@@ -11,10 +11,12 @@
         map1 = new google.maps.Map(document.getElementById("map1"), {
           center: {lat: 39.8283, lng: -98.5795},
           zoom: 3
+          draggable: false
         });
         map2 = new google.maps.Map(document.getElementById("map2"), {
           center: {lat: 46.2276, lng: 2.2137},
           zoom: 3
+          draggable: false
         });
 
         google.maps.event.addListener(map1, 'click', function(event) {

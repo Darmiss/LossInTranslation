@@ -4,7 +4,56 @@
     <title>DiscoveryMap</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR77YDbHKGLauCjtn1h5amoKCofnKGA6Y"></script>
     <script>
-      var map1, map2;
+      
+      
+var markers1400s = [];
+var markers1500s = [];
+var subsetMarkers = [];
+var markers1600s = [];
+var map, map2;
+
+markers1400s.push(new google.maps.Marker({
+  position: { lat: 37.7749, lng: -122.4194 },
+  map: map
+}));
+
+markers1400s.push(new google.maps.Marker({
+  position: { lat: 40.7128, lng: -74.0060 },
+  map: map
+}));
+
+markers1500s.push(new google.maps.Marker({
+  position: { lat: 48.8566, lng: 2.3522 },
+  map: map
+}));
+
+markers1500s.push(new google.maps.Marker({
+  position: { lat: 51.5074, lng: -0.1278 },
+  map: map
+}));
+      
+      
+markers1600s.push(new google.maps.Marker({
+  position: { lat: 48.8566, lng: 2.3522 },
+  map: map
+}));
+
+subsetMarkers.push(new google.maps.Marker({
+  position: { lat: 51.5074, lng: -0.1278 },
+  map: map
+}));
+
+var currentMarkers = markers1400s;
+
+function toggleMarkers(map, markers) {
+  for (var i = 0; i < currentMarkers.length; i++) {
+    currentMarkers[i].setMap(null);
+  }
+  currentMarkers = markers;
+  for (var i = 0; i < currentMarkers.length; i++) {
+    currentMarkers[i].setMap(map);
+  }
+}
       var markers1 = [], markers2 = [];
 
       function initMap() {
@@ -21,41 +70,18 @@
           disableDefaultUI: true
         });
 
-        google.maps.event.addListener(map1, 'click', function(event) {
-          placeMarker(event.latLng, map1, markers1);
-        });
-        google.maps.event.addListener(map2, 'click', function(event) {
-          placeMarker(event.latLng, map2, markers2);
-        });
-      }
 
-      function placeMarker(location, map, markers) {
-        var marker = new google.maps.Marker({
-          position: location,
-          map: map
-        });
-        markers.push(marker);
-      }
-
-      function toggleMarkers(map, markers) {
-        for (var i = 0; i < markers.length; i++) {
-          if (markers[i].getMap() === null) {
-            markers[i].setMap(map);
-          } else {
-            markers[i].setMap(null);
-          }
-        }
-      }
+     
     </script>
 <body onload="initMap()">
     <h1 style="text-align: center;">Discovery of the New World(1492)</h1>
     <div id="map1" style="width: 500px; height: 400px; margin: 0 auto;"></div>
     <br />
    <div style="text-align: center;">
-      <button onclick="toggleMarkers(map1, markers1)">Popular Novels 1400s</button>
-      <button onclick="toggleMarkers(map2, markers2)">Small Subset</button>
-      <button onclick="toggleMarkers(map2, markers2)">Popular Novels 1500s</button>
-      <button onclick="toggleMarkers(map2, markers2)">Popular Novels 1600s</button>
+      <button onclick="toggleMarkers(map, markers1400s)">Popular Novels 1400s</button>
+      <button onclick="toggleMarkers(map, subsetMarkers)">Small Subset</button>
+      <button onclick="toggleMarkers(map, markers1500s)">Popular Novels 1500s</button>
+      <button onclick="toggleMarkers(map, markers1600s)">Popular Novels 1600s</button>
     </div>
   <h2 style="text-align: center;">Sentiment Analysis of the New World</h2>
     <div id="map2" style="width: 500px; height: 400px; margin: 0 auto;"></div>

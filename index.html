@@ -4,8 +4,7 @@
     <title>DiscoveryMap</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR77YDbHKGLauCjtn1h5amoKCofnKGA6Y"></script>
     <script>
-      
-      
+        
 var markers1400s = [];
 var markers1500s = [];
 var subsetMarkers = [];
@@ -57,7 +56,7 @@ function toggleMarkers(map, markers) {
       var markers1 = [], markers2 = [];
 
       function initMap() {
-        map1 = new google.maps.Map(document.getElementById("map1"), {
+        map1 = new google.maps.Map(document.getElementById("map"), {
           center: {lat: 39.8283, lng: -98.5795},
           zoom: 3,
           draggable: false,

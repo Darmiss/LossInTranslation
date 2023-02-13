@@ -63,10 +63,29 @@ function toggleMarkers(map, markers) {
 }
       var markers1 = [], markers2 = [];
 
+      
+      var locations = [  {    title: 'Location 1 for The Great Gatsby',    lat: 37.7749,    lng: -122.4194  },  {    title: 'Location 2 for The Great Gatsby',    lat: 37.7902,    lng: -122.4015  }];
+for (var i = 0; i < locations.length; i++) {
+  var marker = new google.maps.Marker({
+    position: { lat: locations[i].lat, lng: locations[i].lng },
+    map: map,
+    title: locations[i].title
+  });
+
+  var infoWindow = new google.maps.InfoWindow({
+    content: locations[i].title
+  });
+
+  marker.addListener('click', function() {
+    infoWindow.open(map, marker);
+  });
+
+  markers.push(marker);
+}
       function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
           center: {lat: 36.75917583872293, lng: -7.990133970328247},
-          zoom: 2,
+          zoom: 2.5,
           draggable: false,
           disableDefaultUI: true
         });

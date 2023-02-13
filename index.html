@@ -66,8 +66,8 @@ function toggleMarkers(map, markers) {
 
       function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
-          center: {lat: 36.75917583872293, lng: -7.990133970328247},
-          zoom: 2.1,
+          center: {lat: 31.67493619213063, lng: -40.68544708342913},
+          zoom: 2,
           draggable: false,
           disableDefaultUI: true
         });
@@ -85,8 +85,8 @@ function toggleMarkers(map, markers) {
     <h1 style="text-align: center;">Discovery of the New World(1492)</h1>
     <div id="map" style="width: 500px; height: 400px; margin: 0 auto;"></div>
     <br />
-  <div id="legend" style="position: absolute; top: 10px; left: 10px; background: white; padding: 10px;">
-  <h3 style="margin-top: 0;">Legend</h3>
+<div id="legend" style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); background: white; padding: 10px;">
+  <h3 style="margin-top: 0;">Novels</h3>
   <div style="display: flex; align-items: center;">
     <div style="width: 10px; height: 10px; background: #FF0000; margin-right: 10px;"></div>
     <p style="margin: 0;">Book Title Here</p>

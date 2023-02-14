@@ -97,19 +97,6 @@ function updateLegend(category) {
         </div>
       `;
       break;
-    case 'subset':
-      legend.innerHTML = `
-        <h3 style="margin-top: 0;">Subset Novels</h3>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #0000FF; margin-right: 10px;"></div>
-          <p style="margin: 0;">Book Title 3</p>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #FFFF00; margin-right: 10px;"></div>
-          <p style="margin: 0;">Book Title 4</p>
-        </div>
-      `;
-      break;
        case '1500s':
       legend.innerHTML = `
         <h3 style="margin-top: 0;">1500s Novels</h3>
@@ -151,12 +138,23 @@ function updateLegend(category) {
 </div>
    <div style="text-align: center;">
      <button onclick="toggleMarkers(map, markers1400s); updateLegend('1400s')">Popular Novels 1400s</button>
-    <button onclick="toggleMarkers(map, subsetMarkers); updateLegend('subset')">Small Subset</button>
     <button onclick="toggleMarkers(map, markers1500s); updateLegend('1500s')">Popular Novels 1500s</button>
     <button onclick="toggleMarkers(map, markers1600s); updateLegend('1600s')">Popular Novels 1600s</button>
     </div>
   <h2 style="text-align: center;">Sentiment Analysis of the New World</h2>
     <div id="map2" style="width: 500px; height: 400px; margin: 0 auto;"></div>
+  <div style="position: absolute; bottom: 10px; right: 10px;">
+  <div style="display: flex; flex-direction: column;">
+    <p style="margin: 0;">Bad</p>
+    <div style="display: flex; align-items: center;">
+      <div style="width: 50px; height: 10px; background: #FF0000;"></div>
+      <div style="width: 50px; height: 10px; background: #FFFF00;"></div>
+      <div style="width: 50 px; height: 10px; background: #00FF00;"></div>
+</div>
+<p style="margin: 0;">Good</p>
+
+  </div>
+</div>
     <br />
   </body>
 </html>

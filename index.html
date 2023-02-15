@@ -9,7 +9,7 @@ var markers1400s = [];
 var markers1500s = [];
 var subsetMarkers = [];
 var markers1600s = [];
-var map, map2;
+var map;
       
         
       
@@ -131,12 +131,7 @@ function toggleMarkers(map, markers) {
           draggable: false,
           disableDefaultUI: true
         });
-        map2 = new google.maps.Map(document.getElementById("map2"), {
-          center: {lat: 39.8283, lng: -98.5795},
-          zoom: 3,
-          draggable: false,
-          disableDefaultUI: true
-        });
+     
         
         
         
@@ -230,9 +225,7 @@ function updateLegend(category) {
   } else {
     aboutInfo.style.display = "none";
   }
-}
-      
-     
+}   
     </script>
     
     <div id="about-info" style="display:none">
@@ -256,16 +249,12 @@ function updateLegend(category) {
     <button onclick="toggleMarkers(map, markers1500s); updateLegend('1500s');shadeArea(map2,'green')">Novels 1500s</button>
     <button onclick="toggleMarkers(map, markers1600s); updateLegend('1600s');shadeArea(map2,'blue')">Novels 1600s</button>
     </div>
-  <h2 style="text-align: center;">Sentiment Analysis of the New World</h2>
-    <div id="map2" style="width: 500px; height: 400px; margin: 0 auto;"></div>
   <div style="text-align:center;">
   <button onclick="toggleAbout()">About</button>
   </div>
   <div style="position: absolute; bottom: -350px; right: 10px;">
   <div style="display: flex; flex-direction: column;">
     <div style="display: flex; align-items: center;">
-       <div style="width: 50px; height: 10px; background: #FF0000;"></div>
-      <div style="width: 50px; height: 10px; background:  #00FF00;"></div>
 </div>
 
   </div>

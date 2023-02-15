@@ -9,7 +9,7 @@ var markers1400s = [];
 var markers1500s = [];
 var subsetMarkers = [];
 var markers1600s = [];
-var map, map2;
+var map;
       
         
       
@@ -125,38 +125,17 @@ function toggleMarkers(map, markers) {
           draggable: false,
           disableDefaultUI: true
         });
-        map2 = new google.maps.Map(document.getElementById("map2"), {
-          center: {lat: 39.8283, lng: -98.5795},
-          zoom: 3,
-          draggable: false,
-          disableDefaultUI: true
-        });
+   
         
         
         
-       
+    
         
         
       }
       
       
       
-function shadeArea(map, color) {
-  // Code to shade the area on the map with the given color
-  // Example using Google Maps API
-  var rectangle = new google.maps.Rectangle({
-    strokeColor: color,
-    strokeOpacity: 0.8,
-    strokeWeight: 2,
-    fillColor: color,
-    fillOpacity: 0.35,
-    map: map,
-    bounds: new google.maps.LatLngBounds(
-      new google.maps.LatLng(37.759859, -122.440596),
-      new google.maps.LatLng(37.753434, -122.441407)
-    )
-  });
-}
       
 function updateLegend(category) {
   let legend = document.getElementById('legend');
@@ -224,12 +203,11 @@ function updateLegend(category) {
    <br />
 </div>
    <div style="text-align: center;">
-     <button onclick="toggleMarkers(map, markers1400s); updateLegend('1400s'); shadeArea(map2,'red')">Novels 1400s</button>
-    <button onclick="toggleMarkers(map, markers1500s); updateLegend('1500s');shadeArea(map2,'green')">Novels 1500s</button>
-    <button onclick="toggleMarkers(map, markers1600s); updateLegend('1600s');shadeArea(map2,'blue')">Novels 1600s</button>
+     <button onclick="toggleMarkers(map, markers1400s); updateLegend('1400s);">Novels 1400s</button>
+    <button onclick="toggleMarkers(map, markers1500s); updateLegend('1500s');">Novels 1500s</button>
+    <button onclick="toggleMarkers(map, markers1600s); updateLegend('1600s');">Novels 1600s</button>
     </div>
   <h2 style="text-align: center;">Sentiment Analysis of the New World</h2>
-    <div id="map2" style="width: 500px; height: 400px; margin: 0 auto;"></div>
   <div style="text-align:center;">
   <button onclick="">About</button>
   </div>

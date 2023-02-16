@@ -437,25 +437,7 @@ function toggleMarkers(map, markers) {
  
            
       
-      
-      
-      
-function shadeArea(map, color) {
-  // Code to shade the area on the map with the given color
-  // Example using Google Maps API
-  var rectangle = new google.maps.Rectangle({
-    strokeColor: color,
-    strokeOpacity: 0.8,
-    strokeWeight: 2,
-    fillColor: color,
-    fillOpacity: 0.35,
-    map: map,
-    bounds: new google.maps.LatLngBounds(
-      new google.maps.LatLng(37.759859, -122.440596),
-      new google.maps.LatLng(37.753434, -122.441407)
-    )
-  });
-}
+     
       
 function updateLegend(category) {
   let legend = document.getElementById('legend');
@@ -488,11 +470,19 @@ function updateLegend(category) {
         <h3 style="margin-top: 0;">1500s Novels</h3>
         <div style="display: flex; align-items: center;">
           <div style="width: 10px; height: 10px; background: #FF0000; margin-right: 10px;"></div>
-          <p style="margin: 0;">Book Title 5</p>
+          <p style="margin: 0;">Book of the Courtier(1528)</p>
         </div>
         <div style="display: flex; align-items: center;">
           <div style="width: 10px; height: 10px; background: #00FF00; margin-right: 10px;"></div>
-          <p style="margin: 0;">Book Title 6</p>
+          <p style="margin: 0;">Orlando Furioso-Tomo I(1532)</p>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <div style="width: 10px; height: 10px; background: #00FF00; margin-right: 10px;"></div>
+          <p style="margin: 0;">Amadis of Gaul(1508)</p>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <div style="width: 10px; height: 10px; background: #00FF00; margin-right: 10px;"></div>
+          <p style="margin: 0;">The Unfortunate Traveller(1594)</p>
         </div>
       `;
       break;

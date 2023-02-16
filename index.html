@@ -106,7 +106,7 @@ markers1400s.push(new google.maps.Marker({
   map: map,
   icon: {
     path: google.maps.SymbolPath.CIRCLE,
-    scale: 20,
+    scale: 30,
     fillColor: '#FF0000',
     fillOpacity: 0.8,
     strokeWeight: 0
@@ -562,7 +562,7 @@ markers1400s.push(new google.maps.Marker({
   map: map,
   icon: {
     path: google.maps.SymbolPath.CIRCLE,
-    scale: 14,
+    scale: 30,
     fillColor: '#00FF00',
     fillOpacity: 0.8,
     strokeWeight: 0
@@ -729,7 +729,7 @@ markers1400s.push(new google.maps.Marker({
   map: map,
   icon: {
     path: google.maps.SymbolPath.CIRCLE,
-    scale: 12,
+    scale: 30,
     fillColor: '#FFA500',
     fillOpacity: 0.8,
     strokeWeight: 0
@@ -742,21 +742,95 @@ markers1400s.push(new google.maps.Marker({
     }
 }));
       
-   
-      
-    
       
       
       
-markers1600s.push(new google.maps.Marker({
-  position: { lat: 48.8566, lng: 2.3522 },
-  map: map
+   markers1600s.push(new google.maps.Marker({
+      position: { lat: 26.15228650811219, lng:-81.80140982003752},
+  map: map,
+  icon: {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 3,
+    fillColor: '#FF0000',
+    fillOpacity: 0.8,
+    strokeWeight: 0
+  },
+})); 
+      
+      markers1600s.push(new google.maps.Marker({
+      position: { lat:45.493329290325484, lng: 9.146871577100043},
+  map: map,
+  icon: {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 3,
+    fillColor: '#FF0000',
+    fillOpacity: 0.8,
+    strokeWeight: 0
+  },
+})); 
+      
+      
+      markers1600s.push(new google.maps.Marker({
+      position: { lat: 35.60425026184734, lng:16.65602726649356},
+  map: map,
+  icon: {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 3,
+    fillColor: '#FF0000',
+    fillOpacity: 0.8,
+    strokeWeight: 0
+  },
+})); 
+      
+      
+      
+      markers1600s.push(new google.maps.Marker({
+      position: { lat: 36.86115846500798, lng: 10.331622464339953},
+  map: map,
+  icon: {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 3,
+    fillColor: '#FF0000',
+    fillOpacity: 0.8,
+    strokeWeight: 0
+  },
+})); 
+      
+      
+      markers1600s.push(new google.maps.Marker({
+      position: { lat: 34.25192196136183, lng: 9.37847915305623},
+  map: map,
+  icon: {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 3,
+    fillColor: '#FF0000',
+    fillOpacity: 0.8,
+    strokeWeight: 0
+  },
+})); 
+      
+      
+      
+      markers1600s.push(new google.maps.Marker({
+      position: { lat: 37.76999337058174, -79.65472351068556},
+  map: map,
+  icon: {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 30,
+    fillColor: '#FF0000',
+    fillOpacity: 0.8,
+    strokeWeight: 0
+  },
+        label: {
+        text: '+3.5',
+        color: '#000',
+        fontSize: '14px',
+        fontWeight: 'bold'
+    }
 }));
+      
 
-subsetMarkers.push(new google.maps.Marker({
-  position: { lat: 51.5074, lng: -0.1278 },
-  map: map
-}));
+
 
 var currentMarkers = markers1400s;
 
@@ -844,11 +918,11 @@ function updateLegend(category) {
           <p style="margin: 0;">The Pilgrim's Progress(1678)</p>
         </div>
         <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #00FF00; margin-right: 10px;"></div>
+          <div style="width: 10px; height: 10px; background: #FFFF00; margin-right: 10px;"></div>
           <p style="margin: 0;">Robinson Crusoe(1719)</p>
         </div>
         <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #00FF00; margin-right: 10px;"></div>
+          <div style="width: 10px; height: 10px; background: #FFA500; margin-right: 10px;"></div>
           <p style="margin: 0;">New Atlantis(1627)</p>
         </div>
       `;

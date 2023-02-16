@@ -28,9 +28,7 @@
 body.about-open {
   overflow: hidden;
 }
-       #map {
-        cursor: zoom-in;
-      }
+ 
         
     </style>
     <title>DiscoveryMap</title>
@@ -233,13 +231,28 @@ function toggleMarkers(map, markers) {
           draggable: false,
           disableDefaultUI: true
         });
-     
-        
-        
-        
-       
-        
-        
+      }
+        var zoomIn = function(event) {
+  var currentZoom = map.getZoom();
+  var newZoom = currentZoom + 1;
+  var currentCenter = map.getCenter();
+  var newCenter = event.latLng;
+  map.setZoom(newZoom);
+  map.setCenter(newCenter);
+};
+var zoomOut = function() {
+  var currentZoom = map.getZoom();
+  var newZoom = currentZoom - 1;
+  map.setZoom(newZoom);
+};
+google.maps.event.addDomListener(map.getDiv(), "mouseover", function() {
+  google.maps.event.addDomListener(map.getDiv(), "mousemove", zoomIn);
+});
+google.maps.event.addDomListener(map.getDiv(), "mouseout", function() {
+  google.maps.event.clearListeners(map.getDiv(), "mousemove");
+  zoomOut();
+});
+           
       }
       
       

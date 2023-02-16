@@ -829,6 +829,79 @@ markers1400s.push(new google.maps.Marker({
 }));
       
 
+        markers1600s.push(new google.maps.Marker({
+      position: { lat: 26.843475919476713, lng: 29.90162809765751},
+  map: map,
+  icon: {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 3,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    strokeWeight: 0
+  },
+})); 
+        markers1600s.push(new google.maps.Marker({
+      position: { lat: 30.958574847448023, lng: 34.82350325809514},
+  map: map,
+  icon: {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 3,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    strokeWeight: 0
+  },
+})); 
+        markers1600s.push(new google.maps.Marker({
+      position: { lat: 53.87336204255587,lng: -1.9356338668649917},
+  map: map,
+  icon: {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 3,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    strokeWeight: 0
+  },
+})); 
+        markers1600s.push(new google.maps.Marker({
+      position: { lat: 41.916306663963496, lng: 12.505894557481263},
+  map: map,
+  icon: {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 3,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    strokeWeight: 0
+  },
+})); 
+        markers1600s.push(new google.maps.Marker({
+      position: { lat: 31.77689468237879, lng: 35.27780564094783},
+  map: map,
+  icon: {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 3,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    strokeWeight: 0
+  },
+})); 
+        markers1600s.push(new google.maps.Marker({
+      position: { lat: 41.23104577041257, lng:-75.21206139755239},
+  map: map,
+  icon: {
+    path: google.maps.SymbolPath.CIRCLE,
+    scale: 20,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8,
+    strokeWeight: 0
+   },
+        label: {
+        text: '+3.5',
+        color: '#000',
+        fontSize: '14px',
+        fontWeight: 'bold'
+    }
+}));
+      
 
 
 var currentMarkers = markers1400s;
@@ -907,7 +980,7 @@ function updateLegend(category) {
       break;
        case '1600s':
       legend.innerHTML = `
-        <h3 style="margin-top: 0;">1600s Novels</h3>
+        <h3 style="margin-top: 0;">1600s-Early 1700s Novels</h3>
         <div style="display: flex; align-items: center;">
           <div style="width: 10px; height: 10px; background: #FF0000; margin-right: 10px;"></div>
           <p style="margin: 0;">The Tempest(1611)</p>

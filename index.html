@@ -232,26 +232,7 @@ function toggleMarkers(map, markers) {
           disableDefaultUI: true
         });
       }
-        var zoomIn = function(event) {
-  var currentZoom = map.getZoom();
-  var newZoom = currentZoom + 1;
-  var currentCenter = map.getCenter();
-  var newCenter = event.latLng;
-  map.setZoom(newZoom);
-  map.setCenter(newCenter);
-};
-var zoomOut = function() {
-  var currentZoom = map.getZoom();
-  var newZoom = currentZoom - 1;
-  map.setZoom(newZoom);
-};
-google.maps.event.addDomListener(map.getDiv(), "mouseover", function() {
-  google.maps.event.addDomListener(map.getDiv(), "mousemove", zoomIn);
-});
-google.maps.event.addDomListener(map.getDiv(), "mouseout", function() {
-  google.maps.event.clearListeners(map.getDiv(), "mousemove");
-  zoomOut();
-});
+ 
            
       
       
@@ -356,9 +337,9 @@ function updateLegend(category) {
    <br />
 </div>
    <div style="text-align: center;">
-     <button onclick="toggleMarkers(map, markers1400s); updateLegend('1400s'); shadeArea(map2,'red')">Novels Late 1300s-1400s</button>
-    <button onclick="toggleMarkers(map, markers1500s); updateLegend('1500s');shadeArea(map2,'green')">Novels 1500s</button>
-    <button onclick="toggleMarkers(map, markers1600s); updateLegend('1600s');shadeArea(map2,'blue')">Novels 1600s</button>
+     <button onclick="toggleMarkers(map, markers1400s); updateLegend('1400s');">Novels Late 1300s-1400s</button>
+    <button onclick="toggleMarkers(map, markers1500s); updateLegend('1500s');">Novels 1500s</button>
+    <button onclick="toggleMarkers(map, markers1600s); updateLegend('1600s');">Novels 1600s</button>
     </div>
   <div style="text-align:center;">
  <button onclick="toggleAbout()">About</button>

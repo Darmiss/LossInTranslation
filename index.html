@@ -7,52 +7,99 @@
   <title>Loss in Translation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="">
-  <link rel="stylesheet" href="css/style.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <style>
-  .container {
-    display: flex;
-    justify-content: space-between;
-    border: 2px solid black;
-    padding: 10px;
-  }
-  .column {
-    flex: 1;
-    padding: 10px;
-  }
-  .column:not(:last-child) {
-    border-right: 2px solid black;
-  }
-</style>
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: stretch;
+			padding: 20px;
+			border: 2px solid black;
+		}
 
+		.column {
+			flex: 1;
+			padding: 20px;
+			border-right: 2px solid black;
+		}
+
+		.column:last-child {
+			border-right: none;
+		}
+
+		button {
+			margin-right: 10px;
+			margin-bottom: 10px;
+			padding: 5px 10px;
+			border: none;
+			border-radius: 5px;
+			background-color: #ccc;
+			cursor: pointer;
+		}
+
+		button.active {
+			background-color: #333;
+			color: #fff;
+		}
+	</style>
+</head>
 <body>
-  <div class="container">
-    <div class="column left">
-      <h2>Original Text</h2>
-      <ul id="original">
-        <li>Sentence 1</li>
-        <li>Sentence 2</li>
-        <li>Sentence 3</li>
-      </ul>
-    </div>
-    <div class="column middle">
-      <h2>Translated Text</h2>
-      <ul id="translated">
-        <li>Sentence 1</li>
-        <li>Sentence 2</li>
-        <li>Sentence 3</li>
-      </ul>
-    </div>
-    <div class="column right">
-      <h2>Pro. Translated Text</h2>
-      <ul id="pro_translated">
-        <li>Sentence 1</li>
-        <li>Sentence 2</li>
-        <li>Sentence 3</li>
-      </ul>
-    </div>
-  </div>
+	<header>
+		<h1>Poem Title</h1>
+	</header>
+	<div class="container">
+		<div class="column">
+			<h2>Original Text</h2>
+			<ul id="original">
+				<li>Sentence 1</li>
+				<li>Sentence 2</li>
+				<li>Sentence 3</li>
+			</ul>
+		</div>
+		<div class="column">
+			<h2>Translated Text</h2>
+			<ul id="translated">
+				<li>Sentence 1</li>
+				<li>Sentence 2</li>
+				<li>Sentence 3</li>
+			</ul>
+		</div>
+		<div class="column">
+			<h2>Pro. Translated Text</h2>
+			<ul id="pro_translated">
+				<li>Sentence 1</li>
+				<li>Sentence 2</li>
+				<li>Sentence 3</li>
+			</ul>
+		</div>
+	</div>
+	<div class="buttons">
+		<button class="active" data-target="original">Original Text</button>
+		<button data-target="translated">Translated Text</button>
+		<button data-target="pro_translated">Pro. Translated Text</button>
+		<button data-target="other_text">Other Text</button>
+	</div>
+	<script>
+		const buttons = document.querySelectorAll('button');
+		const textContainers = document.querySelectorAll('.column ul');
+
+		buttons.forEach(button => {
+			button.addEventListener('click', () => {
+				buttons.forEach(btn => btn.classList.remove('active'));
+				button.classList.add('active');
+
+				const target = button.getAttribute('data-target');
+				textContainers.forEach(container => {
+					container.style.display = 'none';
+					if (container.getAttribute('id') === target) {
+						container.style.display = 'block';
+					}
+				});
+			});
+		});
+	</script>
 </body>
 
 

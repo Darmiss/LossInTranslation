@@ -10,8 +10,22 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
+<style>
+  .container {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding: 10px;
+  }
+  .column {
+    flex: 1;
+    padding: 10px;
+  }
+  .column:not(:last-child) {
+    border-right: 2px solid black;
+  }
+</style>
 
-  
 <body>
   <div class="container">
     <div class="column left">
@@ -20,7 +34,6 @@
         <li>Sentence 1</li>
         <li>Sentence 2</li>
         <li>Sentence 3</li>
-    
       </ul>
     </div>
     <div class="column middle">
@@ -29,7 +42,6 @@
         <li>Sentence 1</li>
         <li>Sentence 2</li>
         <li>Sentence 3</li>
-    
       </ul>
     </div>
     <div class="column right">
@@ -38,9 +50,11 @@
         <li>Sentence 1</li>
         <li>Sentence 2</li>
         <li>Sentence 3</li>
-  
       </ul>
     </div>
   </div>
 </body>
+
+
+
 </html>

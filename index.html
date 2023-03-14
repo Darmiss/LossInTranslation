@@ -9,97 +9,66 @@
   <meta name="author" content="">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
-<style>
-		.container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			align-items: stretch;
-			padding: 20px;
-			border: 2px solid black;
-		}
-
-		.column {
-			flex: 1;
-			padding: 20px;
-			border-right: 2px solid black;
-		}
-
-		.column:last-child {
-			border-right: none;
-		}
-
-		button {
-			margin-right: 10px;
-			margin-bottom: 10px;
-			padding: 5px 10px;
-			border: none;
-			border-radius: 5px;
-			background-color: #ccc;
-			cursor: pointer;
-		}
-
-		button.active {
-			background-color: #333;
-			color: #fff;
-		}
-	</style>
-</head>
-<body>
-	<header>
-		<h1>Poem Title</h1>
-	</header>
-	<div class="container">
-		<div class="column">
-			<h2>Original Text</h2>
-			<ul id="original">
-				<li>Sentence 1</li>
-				<li>Sentence 2</li>
-				<li>Sentence 3</li>
-			</ul>
-		</div>
-		<div class="column">
-			<h2>Translated Text</h2>
-			<ul id="translated">
-				<li>Sentence 1</li>
-				<li>Sentence 2</li>
-				<li>Sentence 3</li>
-			</ul>
-		</div>
-		<div class="column">
-			<h2>Pro. Translated Text</h2>
-			<ul id="pro_translated">
-				<li>Sentence 1</li>
-				<li>Sentence 2</li>
-				<li>Sentence 3</li>
-			</ul>
-		</div>
-	</div>
-	<div class="buttons">
-		<button class="active" data-target="original">Original Text</button>
-		<button data-target="translated">Translated Text</button>
-		<button data-target="pro_translated">Pro. Translated Text</button>
-		<button data-target="other_text">Other Text</button>
-	</div>
-	<script>
-		const buttons = document.querySelectorAll('button');
-		const textContainers = document.querySelectorAll('.column ul');
-
-		buttons.forEach(button => {
-			button.addEventListener('click', () => {
-				buttons.forEach(btn => btn.classList.remove('active'));
-				button.classList.add('active');
-
-				const target = button.getAttribute('data-target');
-				textContainers.forEach(container => {
-					container.style.display = 'none';
-					if (container.getAttribute('id') === target) {
-						container.style.display = 'block';
-					}
-				});
-			});
-		});
-	</script>
+  <style>
+      .container {
+        display: flex;
+        justify-content: space-between;
+        border: 2px solid black;
+        padding: 10px;
+      }
+      .column {
+        flex: 1;
+        padding: 10px;
+      }
+      .column:not(:last-child) {
+        border-right: 2px solid black;
+      }
+      .button {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="poem-title">Poem Title 1</h1>
+    <div class="container">
+      <div class="column left">
+        <h2>Original Text</h2>
+        <ul id="original">
+          <li>Sentence 1 (Poem 1)</li>
+          <li>Sentence 2 (Poem 1)</li>
+          <li>Sentence 3 (Poem 1)</li>
+        </ul>
+      </div>
+      <div class="column middle">
+        <h2>Translated Text</h2>
+        <ul id="translated">
+          <li>Sentence 1 (Poem 1)</li>
+          <li>Sentence 2 (Poem 1)</li>
+          <li>Sentence 3 (Poem 1)</li>
+        </ul>
+      </div>
+      <div class="column right">
+        <h2>Pro. Translated Text</h2>
+        <ul id="pro_translated">
+          <li>Sentence 1 (Poem 1)</li>
+          <li>Sentence 2 (Poem 1)</li>
+          <li>Sentence 3 (Poem 1)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="button" onclick="switchPoem('Poem Title 1', 'Poem 1', 'Poem 1 Translated', 'Poem 1 Pro. Translated')">Poem 1</button>
+      <button class="button" onclick="switchPoem('Poem Title 2', 'Poem 2', 'Poem 2 Translated', 'Poem 2 Pro. Translated')">Poem 2</button>
+      <button class="button" onclick="switchPoem('Poem Title 3', 'Poem 3', 'Poem 3 Translated', 'Poem 3 Pro. Translated')">Poem 3</button>
+    </div>
+    <script>
+      function switchPoem(title, original, translated, pro_translated) {
+        document.getElementById('poem-title').textContent = title;
+        document.getElementById('original').innerHTML = '<li>' + original + '</li>';
+        document.getElementById('translated').innerHTML = '<li>' + translated + '</li>';
+        document.getElementById('pro_translated').innerHTML = '<li>' + pro_translated + '</li>';
+      }
+    </script>
 </body>
 
 

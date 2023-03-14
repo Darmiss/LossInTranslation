@@ -1,2 +1,2 @@
-# DiscoveryMap
-Go to https://darmiss.github.io/DiscoveryMap/ 
+# LossInTranslation
+Go to https://darmiss.github.io/LossInTranslation/ 

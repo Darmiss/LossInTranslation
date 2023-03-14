@@ -29,45 +29,76 @@
     </style>
   </head>
   <body>
-    <h1 id="poem-title">Poem Title 1</h1>
-    <div class="container">
-      <div class="column left">
-        <h2>Original Text</h2>
-        <ul id="original">
-          <li>Sentence 1 (Poem 1)</li>
-          <li>Sentence 2 (Poem 1)</li>
-          <li>Sentence 3 (Poem 1)</li>
-        </ul>
-      </div>
-      <div class="column middle">
-        <h2>Translated Text</h2>
-        <ul id="translated">
-          <li>Sentence 1 (Poem 1)</li>
-          <li>Sentence 2 (Poem 1)</li>
-          <li>Sentence 3 (Poem 1)</li>
-        </ul>
-      </div>
-      <div class="column right">
-        <h2>Pro. Translated Text</h2>
-        <ul id="pro_translated">
-          <li>Sentence 1 (Poem 1)</li>
-          <li>Sentence 2 (Poem 1)</li>
-          <li>Sentence 3 (Poem 1)</li>
-        </ul>
-      </div>
+  <h1 id="poem-title">Poem 1</h1>
+  <div class="container">
+    <div class="column left">
+      <h2>Original Text</h2>
+      <ul id="original">
+        <li>Wer reitet so spät</li>
+        <li>durch Nacht und Wind?</li>
+        <li>Es ist der Vater</li>
+        <li>mit seinem Kind;</li>
+        <li>Er hat den Knaben</li>
+        <li>wohl in dem Arm,</li>
+        <li>Er fasst ihn sicher,</li>
+        <li>er hält ihn warm.</li>
+      </ul>
     </div>
-    <div class="buttons">
-      <button class="button" onclick="switchPoem('Poem Title 1', 'Poem 1', 'Poem 1 Translated', 'Poem 1 Pro. Translated')">Poem 1</button>
-      <button class="button" onclick="switchPoem('Poem Title 2', 'Poem 2', 'Poem 2 Translated', 'Poem 2 Pro. Translated')">Poem 2</button>
-      <button class="button" onclick="switchPoem('Poem Title 3', 'Poem 3', 'Poem 3 Translated', 'Poem 3 Pro. Translated')">Poem 3</button>
+    <div class="column middle">
+      <h2>Translated Text</h2>
+      <ul id="translated">
+        <li>Who rides so late</li>
+        <li>through night and wind?</li>
+        <li>It is the father</li>
+        <li>with his child;</li>
+        <li>He holds the boy</li>
+        <li>securely in his arm,</li>
+        <li>He keeps him safe,</li>
+        <li>he keeps him warm.</li>
+      </ul>
     </div>
-    <script>
-      function switchPoem(title, original, translated, pro_translated) {
-        document.getElementById('poem-title').textContent = title;
-        document.getElementById('original').innerHTML = '<li>' + original + '</li>';
-        document.getElementById('translated').innerHTML = '<li>' + translated + '</li>';
-        document.getElementById('pro_translated').innerHTML = '<li>' + pro_translated + '</li>';
-      }
+    <div class="column right">
+      <h2>Pro. Translated Text</h2>
+      <ul id="pro_translated">
+        <li>Who rides so late</li>
+        <li>through night and wind?</li>
+        <li>It is the father</li>
+        <li>with his child;</li>
+        <li>He holds the boy</li>
+        <li>safe in his arm,</li>
+        <li>He keeps him close,</li>
+        <li>he keeps him warm.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="poem-buttons">
+    <button onclick="changePoem('poem1')">Poem 1</button>
+    <button onclick="changePoem('poem2')">Poem 2</button>
+    <button onclick="changePoem('poem3')">Poem 3</button>
+    <button onclick="changePoem('poem4')">Poem 4</button>
+  </div>
+  <script>
+    function changePoem(poem) {
+      if (poem === 'poem1') {
+        document.getElementById('poem-title').innerHTML = 'Poem 1';
+        document.getElementById('original').innerHTML = `
+          <li>Wer reitet so spät</li>
+          <li>durch Nacht und Wind?</li>
+          <li>Es ist der Vater</li>
+          <li>mit seinem Kind;</li>
+          <li>Er hat den Knaben</li>
+          <li>wohl in dem Arm,</li>
+          <li>Er fasst ihn sicher,</li>
+          <li>er hält ihn warm.</li>
+        `;
+        document.getElementById('translated').innerHTML = `
+          <li>Who rides so late</li>
+          <li>through night and wind?</li>
+          <li>It is the father</li>
+          <li>with his child;</li>
+          <li>He holds the boy</li>
+          <li>securely in his arm,</li>
+          `;
     </script>
 </body>
 

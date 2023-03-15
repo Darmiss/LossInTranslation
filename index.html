@@ -200,7 +200,16 @@ li:before {
        <li>the child lay dead in his arms.</li>
       `;
     } else if (poem === 'poem2') {
-      document.getElementById('poem-title').innerHTML = 'Poem 2';
+      document.getElementById('poem-title').innerHTML = 'Die Lorelei-Heinrich Heine(1824)';
+      document.getElementById('1-sentiment').innerHTML = -0.167187;
+      document.getElementById('1-sentiment').style.fontSize = '40px';
+      document.getElementById('1-sentiment').style.fontWeight = 'bold';
+      document.getElementById('2-sentiment').innerHTML = 0.19 + " (-0.801`)";
+      document.getElementById('2-sentiment').style.fontSize = '40px';
+      document.getElementById('2-sentiment').style.fontWeight = 'bold';
+      document.getElementById('3-sentiment').innerHTML = 0.158 + " (-0.904`)";
+      document.getElementById('3-sentiment').style.fontSize = '40px';
+      document.getElementById('3-sentiment').style.fontWeight = 'bold';
       document.getElementById('original').innerHTML = `
         <li>Had I the heavens' embroidered cloths,</li>
         <li>Enwrought with golden and silver light,</li>
@@ -224,6 +233,10 @@ li:before {
         <li>Of night and light and the half light,</li>
         `;
   }
+    else if(poem=='poem3'){
+      
+      
+    }
     }
   </script>
 </body>

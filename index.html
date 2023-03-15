@@ -16,13 +16,6 @@
       padding: 10px;
     }
     
- #1-sentiment,
-#2-sentiment,
-#3-sentiment {
-  font-weight: bold !important;
-  font-size: 20px !important;
-}
-    
     .column {
       flex: 1;
       padding: 10px;
@@ -73,8 +66,14 @@
     if (poem === 'poem1') {
       document.getElementById('poem-title').innerHTML = 'Der Erlkönig(1782)';
       document.getElementById('1-sentiment').innerHTML = 0.167187;
+      document.getElementById('1-sentiment').style.fontSize = '20px';
+      document.getElementById('1-sentiment').style.fontWeight = 'bold';
       document.getElementById('2-sentiment').innerHTML = 0.155729;
+      document.getElementById('2-sentiment').style.fontSize = '20px';
+      document.getElementById('2-sentiment').style.fontWeight = 'bold';
       document.getElementById('3-sentiment').innerHTML = 0.123958;
+      document.getElementById('3-sentiment').style.fontSize = '20px';
+      document.getElementById('3-sentiment').style.fontWeight = 'bold';
       document.getElementById('original').innerHTML = `
         <li>Wer reitet so spät durch Nacht und Wind?</li>
         <li>Es ist der Vater mit seinem Kind;</li>

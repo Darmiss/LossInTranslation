@@ -64,7 +64,7 @@
   function changePoem(poem) {
     console.log(`Changing to ${poem}`);
     if (poem === 'poem1') {
-      document.getElementById('poem-title').innerHTML = 'Der Erlkönig(1782)';
+      document.getElementById('poem-title').innerHTML = 'Der Erlkönig(1782)-Johann Wolfgang von Goethe';
       document.getElementById('1-sentiment').innerHTML = 0.167187;
       document.getElementById('1-sentiment').style.fontSize = '40px';
       document.getElementById('1-sentiment').style.fontWeight = 'bold';
@@ -143,6 +143,7 @@
         <li>In his arms the child was dead.</li>
       `;
       document.getElementById('pro_translated').innerHTML = `
+       <p>Translated by Richard Wigmore</p>
        <li>Who rides so late through the night and wind?</li>
        <li>It is the father with his child.</li>
        <li>He has the boy in his arms;</li>

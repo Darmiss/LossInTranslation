@@ -37,12 +37,12 @@
       </ul>
     </div>
     <div class="column middle">
-      <h2>Translated Text</h2>
+      <h2>Google Translated Text</h2>
       <ul id="translated">
       </ul>
     </div>
     <div class="column right">
-      <h2>Pro. Translated Text</h2>
+      <h2>Human Translated Text</h2>
       <ul id="pro_translated">
     </div>
   </div>
@@ -56,16 +56,41 @@
   function changePoem(poem) {
     console.log(`Changing to ${poem}`);
     if (poem === 'poem1') {
-      document.getElementById('poem-title').innerHTML = 'Poem 1';
+      document.getElementById('poem-title').innerHTML = 'Der Erlkönig(1782)';
       document.getElementById('original').innerHTML = `
-        <li>Wer reitet so spät</li>
+        <li>Wer reitet so spät durch Nacht und Wind?</li>
         <li>durch Nacht und Wind?</li>
-        <li>Es ist der Vater</li>
-        <li>mit seinem Kind;</li>
-        <li>Er hat den Knaben</li>
-        <li>wohl in dem Arm,</li>
-        <li>Er fasst ihn sicher,</li>
-        <li>er hält ihn warm.</li>
+        <li>Es ist der Vater mit seinem Kind;</li>
+        <li>Er hat den Knaben wohl in dem Arm,</li>
+        <li>Er fasst ihn sicher, er hält ihn warm. </li>
+        <li>„Mein Sohn, was birgst du so bang dein Gesicht?“</li>
+        <li>„Siehst, Vater, du den Erlkönig nicht?</li>
+        <li>Den Erlenkönig mit Kron’ und Schweif?“</li>
+        <li>Mein Sohn, es ist ein Nebelstreif.“</li>
+        <li>„Du liebes Kind, komm, geh mit mir!</li>
+        <li>Gar schöne Spiele spiel’ ich mit dir;</li>      
+        <li>Manch’ bunte Blumen sind an dem Strand,</li>
+        <li>Meine Mutter hat manch gülden Gewand.“</li>
+        <li>„Mein Vater, mein Vater, und hörest du nicht,</li>
+        <li>Was Erlenkönig mir leise verspricht?“</li>
+        <li>„Sei ruhig, bleibe ruhig, mein Kind:</li>
+        <li>In dürren Blättern säuselt der Wind.“</li>
+        <li> „Willst, feiner Knabe, du mit mir gehn?</li>
+        <li> Meine Töchter sollen dich warten schön;</li>
+        <li> Meine Töchter führen den nächtlichen Rein</li>
+        <li> Und wiegen und tanzen und singen dich ein.“</li>
+        <li>„Mein Vater, mein Vater, und siehst du nicht dort</li>
+        <li>Erlkönigs Töchter am düstern Ort?“</li>
+        <li>„Mein Sohn, mein Sohn, ich seh es genau:</li>
+        <li> Es scheinen die alten Weiden so grau.“</li>
+        <li> „Ich liebe dich, mich reizt deine schöne Gestalt;</li>
+        <li>Und bist du nicht willig, so brauch ich Gewalt.“</li>
+        <li>„Mein Vater, mein Vater, jetzt fasst er mich an!</li>
+        <li> Erlkönig hat mir ein Leids getan!“</li>
+        <li> Dem Vater grausets, er reitet geschwind,</li>
+        <li> Er hält in Armen das ächzende Kind,</li>
+        <li>Erreicht den Hof mit Mühe und Not:</li>
+        <li> In seinen Armen das Kind war tot.</li> 
       `;
       document.getElementById('translated').innerHTML = `
         <li>Who rides so late</li>

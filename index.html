@@ -71,69 +71,61 @@
       </ul>
     </div>
   </div>
-  <div class="poem-buttons">
-    <button onclick="changePoem('poem1')">Poem 1</button>
-    <button onclick="changePoem('poem2')">Poem 2</button>
-    <button onclick="changePoem('poem3')">Poem 3</button>
-    <button onclick="changePoem('poem4')">Poem 4</button>
-  </div>
   <script>
-    function changePoem(poem) {
-  if (poem === 'poem1') {
-    document.getElementById('poem-title').innerHTML = 'Poem 1';
-    document.getElementById('original').innerHTML = `
-      <li>Wer reitet so spät</li>
-      <li>durch Nacht und Wind?</li>
-      <li>Es ist der Vater</li>
-      <li>mit seinem Kind;</li>
-      <li>Er hat den Knaben</li>
-      <li>wohl in dem Arm,</li>
-      <li>Er fasst ihn sicher,</li>
-      <li>er hält ihn warm.</li>
-    `;
-    document.getElementById('translated').innerHTML = `
-      <li>Who rides so late</li>
-      <li>through night and wind?</li>
-      <li>It is the father</li>
-      <li>with his child;</li>
-      <li>He holds the boy</li>
-      <li>securely in his arm,</li>
-      <li>He keeps him safe,</li>
-      <li>he keeps him warm.</li>
-    `;
-    document.getElementById('pro_translated').innerHTML = `
-      <li>Who rides so late at night</li>
-      <li>through wind and sleet?</li>
-      <li>It is the father</li>
-      <li>with his beloved little one;</li>
-      <li>He holds the boy</li>
-      <li>tightly in his arm,</li>
-      <li>He keeps him close,</li>
-      <li>he keeps him warm.</li>
-    `;
-  } else if (poem === 'poem2') {
-    document.getElementById('poem-title').innerHTML = 'Poem 2';
-    document.getElementById('original').innerHTML = `
-      <li>Had I the heavens' embroidered cloths,</li>
-      <li>Enwrought with golden and silver light,</li>
-      <li>The blue and the dim and the dark cloths</li>
-      <li>Of night and light and the half light,</li>
-      <li>I would spread the cloths under your feet:</li>
-      <li>But I, being poor, have only my dreams;</li>
-      <li>I have spread my dreams under your feet;</li>
-      <li>Tread softly because you tread on my dreams.</li>
-    `;
-    document.getElementById('translated').innerHTML = `
-      <li>If I had the heavens' embroidered cloths,</li>
-      <li>Enwrought with golden and silver light,</li>
-      <li>The blue and the dim and the dark cloths</li>
-      <li>Of night and light and the half light,</li>
-      <li>I would spread the cloths under your feet:</li>
-      <li>But I, being poor, have only my dreams;</li>
-      <li>I have spread my dreams under your feet;</li>
-      <li>Tread softly because you tread on my dreams.</li>
-    `;
+  function changePoem(poem) {
+    console.log(`Changing to ${poem}`);
+    if (poem === 'poem1') {
+      document.getElementById('poem-title').innerHTML = 'Poem 1';
+      document.getElementById('original').innerHTML = `
+        <li>Wer reitet so spät</li>
+        <li>durch Nacht und Wind?</li>
+        <li>Es ist der Vater</li>
+        <li>mit seinem Kind;</li>
+        <li>Er hat den Knaben</li>
+        <li>wohl in dem Arm,</li>
+        <li>Er fasst ihn sicher,</li>
+        <li>er hält ihn warm.</li>
+      `;
+      document.getElementById('translated').innerHTML = `
+        <li>Who rides so late</li>
+        <li>through night and wind?</li>
+        <li>It is the father</li>
+        <li>with his child;</li>
+        <li>He holds the boy</li>
+        <li>securely in his arm,</li>
+        <li>He keeps him safe,</li>
+        <li>he keeps him warm.</li>
+      `;
+      document.getElementById('pro_translated').innerHTML = `
+        <li>Who rides so late at night</li>
+        <li>through wind and sleet?</li>
+        <li>It is the father</li>
+        <li>with his beloved little one;</li>
+        <li>He holds the boy</li>
+        <li>tightly in his arm,</li>
+        <li>He keeps him close,</li>
+        <li>he keeps him warm.</li>
+      `;
+    } else if (poem === 'poem2') {
+      document.getElementById('poem-title').innerHTML = 'Poem 2';
+      document.getElementById('original').innerHTML = `
+        <li>Had I the heavens' embroidered cloths,</li>
+        <li>Enwrought with golden and silver light,</li>
+        <li>The blue and the dim and the dark cloths</li>
+        <li>Of night and light and the half light,</li>
+        <li>I would spread the cloths under your feet:</li>
+        <li>But I, being poor, have only my dreams;</li>
+        <li>I have spread my dreams under your feet;</li>
+        <li>Tread softly because you tread on my dreams.</li>
+      `;
+      document.getElementById('translated').innerHTML = `
+        <li>If I had the heavens' embroidered cloths,</li>
+        <li>Enwrought with golden and silver light,</li>
+        <li>The blue and the dim and the dark cloths</li>
+        <li>Of night and light and the half light,</li>
+        `;
   }
     }
+  </script>
 </body>
 </html>

@@ -35,18 +35,21 @@
       <h2>Original Text</h2>
       <ul id="original">
       </ul>
+      <div id="1-sentiment">
+      </div>
     </div>
     <div class="column middle">
       <h2>Google Translated Text</h2>
       <ul id="translated">
       </ul>
+      <div id="2-sentiment">
+      </div>
     </div>
     <div class="column right">
       <h2>Human Translated Text</h2>
       <ul id="pro_translated">
       </ul>
-        <div id="poem-sentiment">
-          <h1>poopepeee heheh</h1>
+        <div id="3-sentiment">
       </div>
     </div>
   </div>
@@ -61,6 +64,9 @@
     console.log(`Changing to ${poem}`);
     if (poem === 'poem1') {
       document.getElementById('poem-title').innerHTML = 'Der Erlkönig(1782)';
+      document.getElementById('1-sentiment').innerHTML = 0.167187;
+      document.getElementById('2-sentiment').innerHTML = 0.155729;
+      document.getElementById('3-sentiment').innerHTML = 0.123958;
       document.getElementById('original').innerHTML = `
         <li>Wer reitet so spät durch Nacht und Wind?</li>
         <li>Es ist der Vater mit seinem Kind;</li>
@@ -176,6 +182,12 @@
         <li>Tread softly because you tread on my dreams.</li>
       `;
       document.getElementById('translated').innerHTML = `
+        <li>If I had the heavens' embroidered cloths,</li>
+        <li>Enwrought with golden and silver light,</li>
+        <li>The blue and the dim and the dark cloths</li>
+        <li>Of night and light and the half light,</li>
+        `;
+         document.getElementById('pro_translated').innerHTML = `
         <li>If I had the heavens' embroidered cloths,</li>
         <li>Enwrought with golden and silver light,</li>
         <li>The blue and the dim and the dark cloths</li>

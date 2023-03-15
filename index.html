@@ -16,19 +16,15 @@
       padding: 10px;
     }
     
- ol {
-  counter-reset: item;
-}
-
-li {
-  list-style: none;
-}
-
-li:before {
-  content: counter(item) ". ";
-  counter-increment: item;
-  font-weight: bold;
-}
+ ul {
+    list-style: none;
+    counter-reset: my-counter;
+  }
+  li:before {
+    content: counter(my-counter) ". ";
+    font-weight: bold;
+    counter-increment: my-counter;
+  }
     .highlight-red {
   color: #FF4136; /* shade of red */
 }

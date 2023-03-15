@@ -16,8 +16,13 @@
       padding: 10px;
     }
     
-    li::marker {
-  list-style-type: decimal;
+   li {
+  list-style: none;
+}
+
+li:before {
+  content: counter(item) ". ";
+  counter-increment: item;
   font-weight: bold;
 }
     .highlight-red {

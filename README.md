@@ -5,4 +5,4 @@ Go to https://darmiss.github.io/LossInTranslation/
 https://textblob.readthedocs.io/en/dev/ https://pypi.org/project/textblob-fr/ https://pypi.org/project/textblob-de/
 Works line-by-line, run through command line by 
 1.) cd to directory location of .py file.
-2.) python Eng.py OR other .py
+2.) python Eng.py OR other .py.

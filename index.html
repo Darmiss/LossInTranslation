@@ -1,1258 +1,427 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-    #about-info {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  box-sizing: border-box;
-  overflow-y: scroll;
+<html lang="en">
+
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>Loss in Translation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <style>
+body {
+  background-color: #f6fbf4;
 }
-
-      
-      
-      
-      . .close-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-      }
-      
-body.about-open {
-  overflow: hidden;
-}
- 
-        
-    </style>
-    <title>DiscoveryMap</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR77YDbHKGLauCjtn1h5amoKCofnKGA6Y"></script>
-    <script>
-        
-var markers1400s = [];
-var markers1500s = [];
-var markers1600s = [];
-var map;
-      
-        
-      
-markers1400s.push(new google.maps.Marker({
-   position: {lat: 43.92752892728733, lng: 11.4131430498782285 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-markers1400s.push(new google.maps.Marker({
-   position: { lat: 40.87936478835672, lng: 14.24548913813033 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 48.857252470078336, lng: 2.324716535839964 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 31.763554600057688, lng: 35.18221252204582 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 38.93715998740766, lng: 22.207063557687572 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-            markers1400s.push(new google.maps.Marker({
-   position: { lat: 28.992728243108218, lng: -50.23678357785634},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 30,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-        label: {
-        text: '-0.125',
-        color: '#FFCCCB',
-        fontSize: '14px',
-        fontWeight: 'bold'
-        
-    }
-}));
-      
-      
-     markers1400s.push(new google.maps.Marker({
-   position: { lat: 41.85991554834512, lng: 12.480890848194678 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-        markers1400s.push(new google.maps.Marker({
-   position: { lat: 31.512491288880828, lng: 34.914972938713476 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-        markers1400s.push(new google.maps.Marker({
-   position: { lat: 40.300024706261866, lng: -3.9436703817936665 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-        markers1400s.push(new google.maps.Marker({
-   position: { lat: 51.572007267322384, lng: -0.12454795352562995 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-        markers1400s.push(new google.maps.Marker({
-   position: { lat: 55.57105129038613, lng: 9.24361201018996 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-      
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 53.07307720634384, lng: -7.664347525331267 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 55.57105129038613, lng: 9.24361201018996 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 48.30199021601145, lng: -2.9158748793043965},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 52.38613877978992, lng: -1.9820369972742613 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 46.61225517658815, lng: 2.407001002535453 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 41.83332137267946, lng: 12.60506019495709 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 8.459567531725272, lng: 39.29909086508674 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 30.361705449295073, lng: 31.213153410926054 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 39.090178890069886, lng: -9.046245505529123 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-      
-      markers1400s.push(new google.maps.Marker({
-   position: { lat: 33.615274987338076, lng: 36.56074951739829 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1400s.push(new google.maps.Marker({
-      position: { lat: 51.70709642421194, lng: -1.0839039481317485 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-        markers1400s.push(new google.maps.Marker({
-      position: { lat: 49.17329859143478, lng: 8.30238364662159 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-        markers1400s.push(new google.maps.Marker({
-      position: { lat: 50.92443377172082,lng: 6.939587017868361 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-        markers1400s.push(new google.maps.Marker({
-      position: { lat: 30.923371160411055, lng: 34.84846084665789 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-        markers1400s.push(new google.maps.Marker({
-      position: { lat: 31.780653899790643, lng: 35.186290446730446 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-      
-      
-
-      
-
-     markers1500s.push(new google.maps.Marker({
-      position: { lat: 46.60768571685431, lng:2.333560671028621 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 45.47210365045874,lng: 9.175494057066588 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 37.93886160306506, lng: 23.767834385916455 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat:32.23355863526603, lng: 53.9096522713484 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 39.02706242187289, lng:34.44014283547158 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 51.48579858034103,lng: -0.2251756435217974 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 39.6270161974177, lng:-3.2760271819042743 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 39.84667326746161, lng:-8.659327997175652 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 41.89017489306563,lng: 12.445409018897296 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-
     
-          markers1500s.push(new google.maps.Marker({
-      position: { lat: 48.83232706929755, lng: 2.3572133247461946 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
     
-      
-      
-            markers1500s.push(new google.maps.Marker({
-      position: { lat: 45.83573371735189, lng: 24.986890263906385},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-            markers1500s.push(new google.maps.Marker({
-      position: { lat: 51.87921698765595, lng: -1.6233462529950604 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-            markers1500s.push(new google.maps.Marker({
-      position: { lat: 40.990345230463845,lng: 19.97684127708742 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-            markers1500s.push(new google.maps.Marker({
-      position: { lat: 20.664254891463806, lng:-76.4249789655109 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 30,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-        label: {
-        text: '+0.023',
-        color: '#CEFAD0',
-        fontSize: '14px',
-        fontWeight: 'bold'
+    .container {
+      display: flex;
+      justify-content: space-between;
+      border: 2px solid black;
+      padding: 10px;
     }
-}));
-
-   
-      markers1500s.push(new google.maps.Marker({
-      position: { lat: 51.48568608701473, lng:-0.06239583573099603 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-          markers1500s.push(new google.maps.Marker({
-      position: { lat: 55.9198169556607, lng: 9.27357565037341 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-          markers1500s.push(new google.maps.Marker({
-      position: { lat: 56.90800051179202, lng:-4.257373229905796 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-          markers1500s.push(new google.maps.Marker({
-      position: { lat: 53.159821685749556, lng: -4.00099049874558 },
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-          markers1500s.push(new google.maps.Marker({
-      position: { lat: 39.35006193966087, lng: 22.56946508300923},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-      
-      
-      
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 41.84382916797837, lng: 12.467535996404163},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 45.450462828809485, lng: 12.248588365902146},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 52.421655336058784, lng:-1.234383027215031},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 42.87103147429634, lng:12.76188456561555},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 39.00541738269748, lng:34.42692386948821},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat:31.797172697651334, lng: 35.064131997300755},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 51.464449689052785, lng:-0.1124362801805174},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));
-      
-       markers1500s.push(new google.maps.Marker({
-      position: { lat: 34.082864326109416, lng:-80.53862334994061},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 30,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-        label: {
-        text: '0.0',
-        color: '#FFFFFF',
-        fontSize: '14px',
-        fontWeight: 'bold'
-    }
-}));
-      
-      
-      
-      
-   markers1600s.push(new google.maps.Marker({
-      position: { lat: 40.86298946002656, lng: 14.318895016999013},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-      
-      markers1600s.push(new google.maps.Marker({
-      position: { lat:45.493329290325484, lng: 9.146871577100043},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-      
-      
-      markers1600s.push(new google.maps.Marker({
-      position: { lat: 35.60425026184734, lng:16.65602726649356},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-      
-      
-      
-      markers1600s.push(new google.maps.Marker({
-      position: { lat: 36.86115846500798, lng: 10.331622464339953},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-      
-      
-      markers1600s.push(new google.maps.Marker({
-      position: { lat: 34.25192196136183, lng: 9.37847915305623},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-      
-      
-      
-      markers1600s.push(new google.maps.Marker({
-      position: { lat: 34.29206438381178, lng: -82.4190928824789},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 16,
-    fillColor: '#FF0000',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-        label: {
-        text: '+0.48',
-        color: '#00FF00',
-        fontSize: '14px',
-        fontWeight: 'bold'
-    }
-}));
-      
-
-        markers1600s.push(new google.maps.Marker({
-      position: { lat: 26.843475919476713, lng: 29.90162809765751},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.30,
-    strokeWeight: 0
-  },
-})); 
-        markers1600s.push(new google.maps.Marker({
-      position: { lat: 30.958574847448023, lng: 34.82350325809514},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-        markers1600s.push(new google.maps.Marker({
-      position: { lat: 53.87336204255587,lng: -1.9356338668649917},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-        markers1600s.push(new google.maps.Marker({
-      position: { lat: 41.916306663963496, lng: 12.505894557481263},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-        markers1600s.push(new google.maps.Marker({
-      position: { lat: 31.77689468237879, lng: 35.27780564094783},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-        markers1600s.push(new google.maps.Marker({
-      position: { lat: 40.337048700488914, lng: -80.31139863967283},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 15,
-    fillColor: '#00FF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-   },
-        label: {
-        text: '+0.3',
-        color: '#CEFAD0',
-        fontSize: '14px',
-        fontWeight: 'bold'
-    }
-}));
-      
-      
-      
- markers1600s.push(new google.maps.Marker({
-      position: { lat: 51.46837730003314, lng: -0.06552628689946033},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-      
-      markers1600s.push(new google.maps.Marker({
-      position: { lat: 28.29069526906823, lng: -16.768751430608205},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-      markers1600s.push(new google.maps.Marker({
-      position: { lat: 39.93151886908667, lng: -8.265333184673517},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-      markers1600s.push(new google.maps.Marker({
-      position: { lat: 39.57677814797563, lng: -3.189649425472215},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-      markers1600s.push(new google.maps.Marker({
-      position: { lat: 32.292568063695015, lng: -8.638868353099593},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-      markers1600s.push(new google.maps.Marker({
-      position: { lat: 18.994725360242022, lng:-71.72161099376609},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 6,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-    },
-        label: {
-        text: '-0.15',
-        color: '#FF0000',
-        fontSize: '14px',
-        fontWeight: 'bold'
-    }
-})); 
-      markers1600s.push(new google.maps.Marker({
-      position: { lat: 31.067156382636327, lng: 34.93366369142292},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-})); 
-      markers1600s.push(new google.maps.Marker({
-      position: { lat: 33.40861995644833, lng: -93.6942664473079},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 8,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
- },
-        label: {
-        text: '0.0',
-        color: '#FFFFFF',
-        fontSize: '14px',
-        fontWeight: 'bold'
-    }
-}));  
-      markers1600s.push(new google.maps.Marker({
-      position: { lat: 25.616874398604683, lng: -90.70598509989934},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 8,
-    fillColor: '#FFFF00',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-        label: {
-        text: '0.0',
-        color: '#FFFFFF',
-        fontSize: '14px',
-        fontWeight: 'bold'
-    }
-})); 
-     
-      
- markers1600s.push(new google.maps.Marker({
-      position: { lat: 49.4789127381969, lng: 6.676827950172514},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));       
     
-      
-       markers1600s.push(new google.maps.Marker({
-      position: { lat: 14.704562492864568, lng: -75.61069597155044},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 8,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
- },
-        label: {
-        text: '0.0',
-        color: '#FFFFFF',
-        fontSize: '14px',
-        fontWeight: 'bold'
-    }
-}));   
-      
-      
-       markers1600s.push(new google.maps.Marker({
-      position: { lat: 30.51035653832409, lng: 30.770930247750332},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));   
-      
-      
-       markers1600s.push(new google.maps.Marker({
-      position: { lat: 32.09994335903299, lng: 35.16040266493918},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 3,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
-  },
-}));   
-      
-      
-       markers1600s.push(new google.maps.Marker({
-      position: { lat: 30.020269509785166, lng: -98.94421174704382},
-  map: map,
-  icon: {
-    path: google.maps.SymbolPath.CIRCLE,
-    scale: 8,
-    fillColor: '#FFA500',
-    fillOpacity: 0.8,
-    strokeWeight: 0
- },
-        label: {
-        text: '-0.03',
-        color: '#FF0000',
-        fontSize: '14px',
-        fontWeight: 'bold'
-    }
-}));    
-      
-      
-     
-
-var currentMarkers = markers1400s;
-
-function toggleMarkers(map, markers) {
-  for (var i = 0; i < currentMarkers.length; i++) {
-    currentMarkers[i].setMap(null);
+ ul {
+    list-style: none;
+    counter-reset: my-counter;
   }
-  currentMarkers = markers;
-  for (var i = 0; i < currentMarkers.length; i++) {
-    currentMarkers[i].setMap(map);
+  li:before {
+    content: counter(my-counter) ". ";
+    font-weight: bold;
+    counter-increment: my-counter;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
   }
+    .highlight-bred {
+  color: #FF4136; /* shade of bred */
 }
-      var markers1 = [], markers2 = [];
 
-
-      function initMap() {
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: {lat: 52.67493619213063, lng: -40.68544708342913},
-          zoom: 2.2,
-          draggable: false,
-          disableDefaultUI: true
-        });
-      }
- 
-           
-      
-     
-      
-function updateLegend(category) {
-  let legend = document.getElementById('legend');
-  legend.innerHTML = '';
-
-   switch (category) {
-    case '1400s':
-      legend.innerHTML = `
-        <h3 style="margin-top: 0;">Late 1300s-1400s Novels</h3>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #FF0000; margin-right: 10px;"></div>
-          <p style="margin: 0;">The Decameron(1353)</p>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #00FF00; margin-right: 10px;"></div>
-          <p style="margin: 0;">The Canterbury Tales(Late 1300s)</p>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #FFFF00; margin-right: 10px;"></div>
-          <p style="margin: 0;">Le Morte d'Arthur(Late 1400s)</p>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #FFA500; margin-right: 10px;"></div>
-          <p style="margin: 0;">The Imitation of Christ(1418)</p>
-        </div>
-      `;
-      break;
-       case '1500s':
-      legend.innerHTML = `
-        <h3 style="margin-top: 0;">1500s Novels</h3>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #FF0000; margin-right: 10px;"></div>
-          <p style="margin: 0;">Book of the Courtier(1528)</p>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #00FF00; margin-right: 10px;"></div>
-          <p style="margin: 0;">Orlando Furioso-Tomo I(1532)</p>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #FFFF00; margin-right: 10px;"></div>
-          <p style="margin: 0;">Amadis of Gaul(1508)</p>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #FFA500; margin-right: 10px;"></div>
-          <p style="margin: 0;">The Unfortunate Traveller(1594)</p>
-        </div>
-      `;
-      break;
-       case '1600s':
-      legend.innerHTML = `
-        <h3 style="margin-top: 0;">1600s-Early 1700s Novels</h3>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #FF0000; margin-right: 10px;"></div>
-          <p style="margin: 0;">The Tempest(1611)</p>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #00FF00; margin-right: 10px;"></div>
-          <p style="margin: 0;">The Pilgrim's Progress(1678)</p>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #FFFF00; margin-right: 10px;"></div>
-          <p style="margin: 0;">Robinson Crusoe(1719)</p>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <div style="width: 10px; height: 10px; background: #FFA500; margin-right: 10px;"></div>
-          <p style="margin: 0;">New Atlantis(1627)</p>
-        </div>
-      `;
-      break;
-    default:
-      break;
-  }
+.highlight-bgreen {
+  color: #2ECC40; /* shade of bgreen */
 }
-      
-      
-      
-      function toggleAbout() {
-        var body = document.getElementsByTagName("body")[0];
-        var aboutInfo = document.getElementById("about-info");
-        if (aboutInfo.style.display === "none") {
-          aboutInfo.style.display = "block";
-          body.classList.add("about-open");
-        } else {
-          aboutInfo.style.display = "none";
-          body.classList.remove("about-open");
-        }
-      }
-    </script>
     
+       .highlight-lred {
+  color: #ffc6c4; /* shade of lred */
+}
+    
+    
+       .highlight-lgreen {
+  color: #90EE90; /* shade of lgreen */
+}
+    
+    
+    
+    .column {
+      flex: 1;
+      padding: 10px;
+    }
+    .column:not(:last-child) {
+      border-right: 2px solid black;
+    }
+    .button {
+      margin-right: 10px;
+    }
+  </style>
+</head>
 
-    
-    
-<body onload="initMap()">
-    <h1 style="text-align: center;">Discovery of the New World(1492)</h1>
-    <div id="map" style="width: 600px; height: 500px; margin: 0 auto;"></div>
-   <div id="legend" style="position: absolute; top: 190px; right: 10px; background: white; padding: 10px;">
-   <br />
-</div>
-   <div style="text-align: center;">
-     <button onclick="toggleMarkers(map, markers1400s); updateLegend('1400s');">Novels Late 1300s-1400s</button>
-    <button onclick="toggleMarkers(map, markers1500s); updateLegend('1500s');">Novels 1500s</button>
-    <button onclick="toggleMarkers(map, markers1600s); updateLegend('1600s');">Novels 1600s-Early 1700s</button>
+<body onload="changePoem('poem1')">
+  <h1 id="poem-title">Poem 1</h1>
+  <div class="container">
+    <div class="column left">
+      <h2>Original Poem</h2>
+      <ul id="original">
+      </ul>
+      <div id="1-sentiment">
+      </div>
     </div>
-  <div style="text-align:center;">
- <button onclick="toggleAbout()">About</button>
-    <div id="about-info" style="display:none">
-      <div class="close-button" onclick="toggleAbout()">X</div>
-      <p>Tools used:</p>
-      <p> Project Gutenberg</p>
-      <p>  Stanford Named Entity Recognizer (NER) </p>
-      <p> https://nlp.stanford.edu/software/CRF-NER.shtml</p>
-      <p> TextBlob Sentiment Analysis</p>
-      <p> https://textanalysisonline.com/textblob-sentiment-analysis </p>
+    <div class="column middle">
+      <h2>Google Translated Poem</h2>
+      <ul id="translated">
+      </ul>
+      <div id="2-sentiment">
+      </div>
+    </div>
+    <div class="column right">
+      <h2>Human Translated Poem</h2>
+      <ul id="pro_translated">
+      </ul>
+        <div id="3-sentiment">
+      </div>
+    </div>
   </div>
-  <div style="position: absolute; bottom: -350px; right: 10px;">
-  <div style="display: flex; flex-direction: column;">
-    <div style="display: flex; align-items: center;">
-</div>
+  <div class="poem-buttons">
+    <button onclick="changePoem('poem1')">Poem 1</button>
+    <button onclick="changePoem('poem2')">Poem 2</button>
+    <button onclick="changePoem('poem3')">Poem 3</button>
+    <button onclick="changePoem('poem4')">Poem 4</button>
+  </div>
+  <script>
+  function changePoem(poem) {
+    console.log(`Changing to ${poem}`);
+    if (poem === 'poem1') {
+      document.getElementById('poem-title').innerHTML = 'Der Erlkönig(1782)-Johann Wolfgang von Goethe';
+      document.getElementById('1-sentiment').innerHTML = 0.167;
+      document.getElementById('1-sentiment').style.fontSize = '40px';
+      document.getElementById('1-sentiment').style.fontWeight = 'bold';
+      document.getElementById('2-sentiment').innerHTML = 0.156 + " (-0.011)";
+      document.getElementById('2-sentiment').style.fontSize = '40px';
+      document.getElementById('2-sentiment').style.fontWeight = 'bold';
+      document.getElementById('3-sentiment').innerHTML = 0.124 + " (-0.043)";
+      document.getElementById('3-sentiment').style.fontSize = '40px';
+      document.getElementById('3-sentiment').style.fontWeight = 'bold';
+      document.getElementById('original').innerHTML = `
+        <li>Wer reitet so spät durch Nacht und Wind?</li>
+        <li>Es ist der Vater mit seinem Kind;</li>
+        <li class="highlight-bred">Er hat den Knaben wohl in dem Arm,(-1.0)</li>
+        <li class="highlight-bgreen">Er fasst ihn sicher, er hält ihn warm.(0.7)</li>
+        <li class="highlight-bred">„Mein Sohn, was birgst du so bang dein Gesicht?“(-0.7)</li>
+        <li>„Siehst, Vater, du den Erlkönig nicht?</li>
+        <li>Den Erlenkönig mit Kron’ und Schweif?“</li>
+        <li>Mein Sohn, es ist ein Nebelstreif.“</li>
+        <li class="highlight-bgreen">„Du liebes Kind, komm, geh mit mir!(1.0)</li>
+        <li class="highlight-bgreen">Gar schöne Spiele spiel’ ich mit dir;(1.0)</li>      
+        <li class="highlight-bgreen">Manch’ bunte Blumen sind an dem Strand,(0.7)</li>
+        <li>Meine Mutter hat manch gülden Gewand.“</li>
+        <li>„Mein Vater, mein Vater, und hörest du nicht,</li>
+        <li class="highlight-bgreen">Was Erlenkönig mir leise verspricht?“(1.0)</li>
+        <li class="highlight-bgreen">„Sei ruhig, bleibe ruhig, mein Kind:(0.7)</li>
+        <li>In dürren Blättern säuselt der Wind.“</li>
+        <li class="highlight-bgreen"> „Willst, feiner Knabe, du mit mir gehn?(1.0)</li>
+        <li class="highlight-bgreen"> Meine Töchter sollen dich warten schön;(1.0)</li>
+        <li class="highlight-bgreen"> Meine Töchter führen den nächtlichen Rein(1.0)</li>
+        <li> Und wiegen und tanzen und singen dich ein.“</li>
+        <li>„Mein Vater, mein Vater, und siehst du nicht dort</li>
+        <li>Erlkönigs Töchter am düstern Ort?“</li>
+        <li>„Mein Sohn, mein Sohn, ich seh es genau:</li>
+        <li class="highlight-bred"> Es scheinen die alten Weiden so grau.“(-0.7)</li>
+        <li class="highlight-bgreen"> „Ich liebe dich, mich reizt deine schöne Gestalt;(1.0)</li>
+        <li class="highlight-lred">Und bist du nicht willig, so brauch ich Gewalt.“(-0.35)</li>
+        <li>„Mein Vater, mein Vater, jetzt fasst er mich an!</li>
+        <li> Erlkönig hat mir ein Leids getan!“</li>
+        <li> Dem Vater grausets, er reitet geschwind,</li>
+        <li> Er hält in Armen das ächzende Kind,</li>
+        <li>Erreicht den Hof mit Mühe und Not:</li>
+        <li class="highlight-bred"> In seinen Armen das Kind war tot.(-1.0)</li> 
+      `;
+      document.getElementById('translated').innerHTML = `
+         <li class="highlight-lred" >Who rides so late through night and wind?(-0.3)</li>
+        <li>It is the father with his child:</li>
+        <li>He probably has the boy in his arms,</li>
+        <li  class="highlight-bgreen">he grips him securely, he keeps him warm.(0.5)</li>
+        <li  class="highlight-lred">"My son, why are you hiding your face so anxious?"(-0.25)</li>
+         <li>"Father, do not you see the Erlking?</li>
+        <li>The alder king with crown and tail?”</li>
+        <li>"My son, it is a streak of mist."</li>
+        <li>"You dear child, come, go with me!</li>
+        <li  class="highlight-bgreen">I play beautiful games with you;(0.85)</li>
+        <li  class="highlight-lgreen">Many colorful flowers are on the beach,(0.4)</li>
+        <li  class="highlight-lgreen">My mother has many a golden robe.”(0.4)</li>
+        <li>"My father, my father, and don't you hear</li>
+        <li>What Erlenkönig quietly promises me?”</li>
+        <li  class="highlight-lgreen">"Be quiet, stay calm, my child:(0.15)</li>
+        <li  class="highlight-lred">The wind whispers in dry leaves.”(-0.06)</li>
+        <li  class="highlight-bgreen">"Would you like to go with me, good boy?(0.7)</li>
+        <li  class="highlight-bgreen">My daughters shall wait for you beautifully;(0.85)</li>
+        <li  class="highlight-lgreen">My daughters lead the nightly clean(0.36)</li>
+        <li>And rock and dance and sing you in."</li>
+        <li>“My father, my father, and don't you see there</li>
+        <li>Erlkönig's daughters in the gloomy place?"</li>
+        <li  class="highlight-lgreen">"My son, my son, I see it clearly:(0.1)</li>
+        <li  class="highlight-lgreen">The old willows seem so gray.”(0.1)</li>
+        <li  class="highlight-bgreen">“I love you, your beautiful form appeals to me;(0.67)</li>
+        <li  class="highlight-lred">And if you are not willing, I will use force."(-0.13)</li>
+        <li  class="highlight-bgreen">"My father, my father, now he's touching me!(0.63)</li>
+        <li  class="highlight-lred">Erlkönig has done me a pity!"(-0.13)</li>
+        <li  class="highlight-lgreen">The father is horrified, he rides quickly,(0.33)</li>
+        <li>He holds the groaning child in his arms,</li>
+        <li>Reaches the farm with difficulty:</li>
+        <li  class="highlight-lred">In his arms the child was dead.(-0.2)</li>
+      `;
+      document.getElementById('pro_translated').innerHTML = `
+       <li class="highlight-lred">Who rides so late through the night and wind?(-0.3)</li>
+       <li>It is the father with his child.</li>
+       <li>He has the boy in his arms;</li>
+       <li class="highlight-bgreen">he holds him safely, he keeps him warm.(0.55)</li>
+       <li>‘My son, why do you hide your face in fear?’</li>
+       <li>‘Father, can you not see the Erlking?</li>
+       <li>The Erlking with his crown and tail?’</li>
+       <li>‘My son, it is a streak of mist.’</li>
+       <li class="highlight-lgreen">‘Sweet child, come with me.(0.35)</li>
+       <li class="highlight-bgreen">I’ll play wonderful games with you.(1.0)</li>
+       <li class="highlight-lgreen">Many a pretty flower grows on the shore;(0.38)</li>
+       <li class="highlight-lgreen">my mother has many a golden robe.’(0.4)</li>
+       <li>‘Father, father, do you not hear</li>
+       <li class="highlight-lgreen">what the Erlking softly promises me?’(0.1)</li>
+       <li class="highlight-lgreen">‘Calm, be calm, my child:(0.3)</li>
+       <li>the wind is rustling in the withered leaves.’</li>
+       <li class="highlight-lgreen">‘Won’t you come with me, my fine lad?(0.42)</li>
+       <li>My daughters shall wait upon you;</li>
+       <li>my daughters lead the nightly dance,</li>
+       <li>and will rock you, and dance, and sing you to sleep.’</li>
+       <li>‘Father, father, can you not see</li>
+       <li>Erlking’s daughters there in the darkness?’</li>
+       <li class="highlight-lgreen">‘My son, my son, I can see clearly:(0.1)</li>
+       <li class="highlight-lgreen">it is the old grey willows gleaming.’(0.025)</li>
+       <li class="highlight-bgreen">‘I love you, your fair form allures me,(0.6)</li>
+       <li class="highlight-lgreen">and if you don’t come willingly, I’ll use force.’(0.25)</li>
+       <li>‘Father, father, now he’s seizing me!</li>
+       <li>The Erlking has hurt me!’</li>
+       <li>The father shudders, he rides swiftly,</li>
+       <li>he holds the moaning child in his arms;</li>
+       <li>with one last effort he reaches home;</li>
+       <li class="highlight-lred">the child lay dead in his arms.(-0.2)</li>
+      `;
+    } else if (poem === 'poem2') {
+      document.getElementById('poem-title').innerHTML = 'Die Lorelei-Heinrich Heine(1824)';
+      document.getElementById('1-sentiment').innerHTML = "-"+0.038;
+      document.getElementById('1-sentiment').style.fontSize = '40px';
+      document.getElementById('1-sentiment').style.fontWeight = 'bold';
+      document.getElementById('2-sentiment').innerHTML = 0.046 + " (+0.084)";
+      document.getElementById('2-sentiment').style.fontSize = '40px';
+      document.getElementById('2-sentiment').style.fontWeight = 'bold';
+      document.getElementById('3-sentiment').innerHTML = 0.075 + " (+0.113)";
+      document.getElementById('3-sentiment').style.fontSize = '40px';
+      document.getElementById('3-sentiment').style.fontWeight = 'bold';
+      document.getElementById('original').innerHTML = `
+       <li>Ich weiß nicht, was soll es bedeuten,</li>
+       <li class="highlight-bred" >Daß ich so traurig bin,(-1.0)</li>
+       <li>Ein Märchen aus uralten Zeiten,</li>
+       <li>Das kommt mir nicht aus dem Sinn.</li>
+       <li class="highlight-bred">Die Luft ist kühl und es dunkelt,(-0.7)</li>
+       <li class="highlight-bgreen"> Und ruhig fließt der Rhein;(0.7)</li>
+       <li> Der Gipfel des Berges funkelt,</li>
+       <li> Im Abendsonnenschein.</li>
+       <li> Die schönste Jungfrau sitzet</li>
+       <li class="highlight-bgreen"> Dort oben wunderbar,(1.0)</li>
+       <li> Ihr gold’nes Geschmeide blitzet,</li>
+       <li> Sie kämmt ihr goldenes Haar,</li>
+       <li> Sie kämmt es mit goldenem Kamme,</li>
+       <li> Und singt ein Lied dabei;</li>
+       <li> Das hat eine wundersame,</li>
+       <li> Gewalt’ge Melodei.</li>
+       <li> Den Schiffer im kleinen Schiffe,</li>
+       <li class="highlight-bred"> Ergreift es mit wildem Weh;(-1.0)</li>
+       <li> Er schaut nicht die Felsenriffe,</li>
+       <li> Er schaut nur hinauf in die Höh’.</li>
+       <li> Ich glaube, die Wellen verschlingen</li>
+       <li> Am Ende Schiffer und Kahn,</li>
+       <li> Und das hat mit ihrem Singen,</li>
+       <li> Die Loreley getan.</li>
+      `;
+      document.getElementById('translated').innerHTML = `
+        <li class="highlight-lred">I don't know what it's supposed to mean(-0.31)</li>
+        <li class="highlight-bred">that I'm so sad(-0.5)</li>
+        <li>A fairy tale from ancient times</li>
+        <li>I can't get that out of my head.</li>
+        <li class="highlight-lgreen">The air is cool and it's getting dark(0.1)</li>
+        <li class="highlight-lgreen">And calmly flows the Rhine;(0.3)</li>
+        <li>The peak of the mountain sparkles,</li>
+        <li>In the evening sunlight.</li>
+        <li class="highlight-bgreen">The most beautiful maiden is seated(0.68)</li>
+        <li class="highlight-bgreen">Wonderful up there,(1.0)</li>
+        <li class="highlight-lgreen">Her golden attire glances,(0.3)</li>
+        <li class="highlight-lgreen">She combs her golden hair,(0.3)</li>
+        <li class="highlight-lgreen">She combs with a golden comb,(0.3)</li>
+        <li>And sings a song;</li>
+        <li>That has a miraculous,</li>
+        <li class="highlight-bred">Violent melody.(-0.8)</li>
+        <li class="highlight-lred">the skipper in the small ship,(-0.25)</li>
+        <li class="highlight-lgreen">seize it with wild sorrow;(0.1)</li>
+        <li>He does not look at the cliffs,</li>
+        <li>He just looks up into the sky.</li>
+        <li>I think, the waves devour</li>
+        <li>At the end skipper and barge,</li>
+        <li>And that has to do with her singing,</li>
+        <li>The Loreley done.</li>
+        `;
+         document.getElementById('pro_translated').innerHTML = `
+        <li>I do not know what it might bode</li>
+        <li class="highlight-bred">That I should be so sad,(-0.5)</li>
+        <li class="highlight-lred">A fairytale from long ago(-0.05)</li>
+        <li>Now will not leave my head.</li>
+        <li class="highlight-lgreen">The air is cool and darkening(0.35)</li>
+        <li>Above the quiet Rhine;</li>
+        <li>The mountaintops are sparkling</li>
+        <li>In afternoon sunshine.</li>
+        <li class="highlight-lgreen">The loveliest young maiden sits(0.1)</li>
+        <li class="highlight-bgreen">So beautifully up there,(0.85)</li>
+        <li class="highlight-lgreen">Her golden jewelry gleams and glints,(0.3)</li>
+        <li class="highlight-lgreen">She combs her golden hair,(0.3)</li>
+        <li class="highlight-lgreen">She combs it with a golden brush(0.3)</li>
+        <li>And while she combs she sings;</li>
+        <li>The tune is both miraculous</li>
+        <li>And overpowering.</li>
+        <li>It grips the sailor in the ship</li>
+        <li class="highlight-lgreen">With a wild and aching woe;(0.1)</li>
+        <li>His eyes are only looking up,</li>
+        <li>Not at the rocks below.</li>
+        <li>I believe that in the end the waves</li>
+        <li>Devoured ship and boy,</li>
+        <li>And that is what the Lorelei</li>
+        <li class="highlight-lgreen">Accomplished with her voice.(0.2)</li>
+        `;
+  }
+    else if(poem=='poem3'){
+      document.getElementById('poem-title').innerHTML = 'Albatros-Charles Baudelaire(1850s)';
+      document.getElementById('1-sentiment').innerHTML = "-"+0.043;
+      document.getElementById('1-sentiment').style.fontSize = '40px';
+      document.getElementById('1-sentiment').style.fontWeight = 'bold';
+      document.getElementById('2-sentiment').innerHTML = "-"+ 0.054 + " (+0.011)";
+      document.getElementById('2-sentiment').style.fontSize = '40px';
+      document.getElementById('2-sentiment').style.fontWeight = 'bold';
+      document.getElementById('3-sentiment').innerHTML = "-"+0.025 + " (+0.018)";
+      document.getElementById('3-sentiment').style.fontSize = '40px';
+      document.getElementById('3-sentiment').style.fontWeight = 'bold';
+       document.getElementById('original').innerHTML = `
+      <li>Souvent, pour s'amuser, les hommes d'équipage</li>
+      <li class="highlight-lgreen">Prennent des albatros, vastes oiseaux des mers,(0.38)</li>
+      <li>Qui suivent, indolents compagnons de voyage,</li>
+      <li class="highlight-bred">Le navire glissant sur les gouffres amers.(-0.6)</li>
+      <li>À peine les ont-ils déposés sur les planches,</li>
+      <li class="highlight-bred">Que ces rois de l'azur, maladroits et honteux,(-0.5)</li>
+      <li class="highlight-lgreen">Laissent piteusement leurs grandes ailes blanches(0.18)</li>
+      <li>Comme des avirons traîner à côté d'eux.</li>
+      <li class="highlight-lred">Ce voyageur ailé, comme il est gauche et veule!(-0.2)</li>
+      <li class="highlight-lgreen">Lui, naguère si beau, qu'il est comique et laid!(0.17)</li>
+      <li>L'un agace son bec avec un brûle-gueule,</li>
+      <li class="highlight-lred">L'autre mime, en boitant, l'infirme qui volait!(-0.13)</li>
+      <li>Le Poète est semblable au prince des nuées</li>
+      <li>Qui hante la tempête et se rit de l'archer;</li>
+      <li>Exilé sur le sol au milieu des huées,</li>
+      <li>Ses ailes de géant l'empêchent de marcher.</li>
+      `;
+      document.getElementById('translated').innerHTML = `
+         <li class="highlight-lgreen" >Often, for fun, the crewmen(0.3)</li>
+         <li>Take albatrosses, vast birds of the seas,</li>
+         <li>Who follow, indolent traveling companions,</li>
+         <li class="highlight-lred">The ship gliding over the bitter chasms.(-0.1)</li>
+         <li class="highlight-lred">Hardly have they placed them on the boards,(-0.29)</li>
+         <li class="highlight-lred">May these kings of the azure, clumsy and shameful,(-0.3)</li>
+         <li class="highlight-lgreen">Pitifully leave their great white wings(0.4)</li>
+         <li>Like oars dragging beside them.</li>
+         <li class="highlight-bred">This winged traveller, how awkward and spineless he is!(-0.75)</li>
+         <li class="highlight-lgreen">He, once so handsome, that he is comical and ugly!(0.04)</li>
+         <li>One annoys his beak with a mouth burner,</li>
+         <li class="highlight-lred">The other mimics, limping, the cripple who was flying!(-0.16)</li>
+         <li>The Poet is like the prince of the clouds</li>
+         <li>Who haunts the storm and laughs at the archer;</li>
+         <li>Exiled on the ground amid boos,</li>
+         <li>His giant wings prevent him from walking.</li>
+        `;
+         document.getElementById('pro_translated').innerHTML = `
+        <li>Often, to amuse themselves the men of the crew</li>
+        <li>Lay hold of the albatross, vast birds of the seas—</li>
+        <li>Who follow, sluggish companions of the voyage,</li>
+        <li class="highlight-lred">The ship gliding on the bitter gulfs.(-0.1)</li>
+        <li class="highlight-lred">Hardly have they placed them on the planks,(-0.29)</li>
+        <li class="highlight-lred">Than these kings of the azure, clumsy and shameful,(-0.3)</li>
+        <li class="highlight-lgreen">Let, piteously, their great wings in white,(0.4)</li>
+        <li class="highlight-lred">Like oars, drag at their sides.(-0.1)</li>
+        <li class="highlight-bred">This winged traveler, how he is awkward and weak!(-0.53)</li>
+        <li class="highlight-lgreen">He, lately so handsome, how comic he is and uncomely!(0.41)</li>
+        <li>Someone bothers his beak with a short pipe,</li>
+        <li class="highlight-bred">Another imitates, limping, the ill thing that flew!(-0.63)</li>
+        <li>The poet resembles the prince of the clouds</li>
+        <li class="highlight-lgreen">Who is friendly to the tempest and laughs at the bowman;(0.38)</li>
+        <li>Banished to ground in the midst of hootings,</li>
+        <li>His wings, those of a giant, hinder him from walking.</li>
+        `;
+    }
+    else if(poem =='poem4'){
+      document.getElementById('poem-title').innerHTML = 'Demain, dès l*aube-Victor Hugo(1850s)';
+      document.getElementById('1-sentiment').innerHTML = "-"+0.021;
+      document.getElementById('1-sentiment').style.fontSize = '40px';
+      document.getElementById('1-sentiment').style.fontWeight = 'bold';
+      document.getElementById('2-sentiment').innerHTML = "-"+ 0.046 + " (-0.025)";
+      document.getElementById('2-sentiment').style.fontSize = '40px';
+      document.getElementById('2-sentiment').style.fontWeight = 'bold';
+      document.getElementById('3-sentiment').innerHTML = "-"+0.039 + " (-0.018)";
+      document.getElementById('3-sentiment').style.fontSize = '40px';
+      document.getElementById('3-sentiment').style.fontWeight = 'bold';
+       document.getElementById('original').innerHTML = `
+      <li>Demain, dès l'aube, à l'heure où blanchit la campagne,</li>
+      <li>Je partirai. Vois-tu, je sais que tu m'attends.</li>
+      <li>J'irai par la forêt, j'irai par la montagne.</li>
+      <li class="highlight-lgreen">Je ne puis demeurer loin de toi plus longtemps.(0.15)</li>
+      <li>Je marcherai les yeux fixés sur mes pensées,</li>
+      <li>Sans rien voir au dehors, sans entendre aucun bruit,</li>
+      <li class="highlight-lred">Seul, inconnu, le dos courbé, les mains croisées,(-0.15)</li>
+      <li class="highlight-lred">Triste, et le jour pour moi sera comme la nuit.(-0.3)</li>
+      <li>Je ne regarderai ni l'or du soir qui tombe,</li>
+      <li>Ni les voiles au loin descendant vers Harfleur,</li>
+      <li>Et quand j'arriverai, je mettrai sur ta tombe</li>
+      <li>Un bouquet de houx vert et de bruyère en fleur.</li>
+      `;
+      document.getElementById('translated').innerHTML = `
+        <li>Tomorrow, at dawn, when the countryside whitens,</li>
+        <li>I leave. You see, I know you are waiting for me.</li>
+        <li>I will go through the forest, I will go across the mountains.</li>
+        <li>I cannot stay away from you any longer.</li>
+        <li class="highlight-lgreen">I will walk with my eyes fixed on my thoughts,(0.1)</li>
+        <li>Without seeing anything outside, without hearing any noise,</li>
+        <li class="highlight-lred">Alone, unknown, back bent, hands crossed,(-0.05)</li>
+        <li class="highlight-bred">Sad, and the day for me will be like night.(-0.5)</li>
+        <li>I will not look at the gold of the falling evening,</li>
+        <li>Nor the sails in the distance descending towards Harfleur,</li>
+        <li>And when I arrive, I will put on your grave</li>
+        <li class="highlight-lred">A bouquet of green holly and flowering heather.(-0.2)</li>
 
-  </div>
-</div>
-    <br />
-  </body>
+        `;
+         document.getElementById('pro_translated').innerHTML = `
+        <li>Tomorrow, at dawn, in the hour when the countryside becomes white,</li>
+        <li>I will leave. You see, I know that you are waiting for me.</li>
+        <li>I will go by the forest, I will go by the mountain.</li>
+        <li class="highlight-lgreen">I cannot stay far from you any longer.(0.1)</li>
+        <li class="highlight-lgreen">I will walk eyes fixed on my thoughts,(0.1)</li>
+        <li>Without seeing anything outside, nor hearing any noise,</li>
+        <li class="highlight-lred">Alone, unknown, the back curved, the hands crossed,(-0.05)</li>
+        <li class="highlight-bred">Sad, and the day for me will be like the night.(-0.5)</li>
+        <li>I will not look at the gold of the evening which falls,</li>
+        <li>Nor the faraway sails descending towards Harfleur.</li>
+        <li>And when I arrive, I will put on your tomb</li>
+        <li class="highlight-lred">A green bouquet of holly and flowering heather.(-0.2)</li>
+        `;
+    }
+    }
+  </script>
+</body>
 </html>
-
-
